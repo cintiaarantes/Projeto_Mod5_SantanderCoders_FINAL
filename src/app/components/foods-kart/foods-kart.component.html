@@ -1,0 +1,13 @@
+<mat-list>
+    @for(food of addedFoodsList; track food.id){
+        <mat-list-item>
+            {{food.nome}} | {{food.totalAddCarrinho}}
+            <button mat-button color="warn" (click)="decrementTotalFoodCopies(food)">-</button>
+            <button mat-button color="primary" (click)="incrementTotalFoodCopies(food)">+</button>
+        </mat-list-item>
+        
+        <mat-divider></mat-divider>
+    } @empty {
+        <mat-list-item>Carrinho vazio</mat-list-item>
+    }
+</mat-list>
